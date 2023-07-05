@@ -1,0 +1,78 @@
+body{
+    padding: 30px;
+    background-color: #121212;  
+  }
+  
+  #line1, #line2, #line3, #line5, #line7 {
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden; 
+    font-family: 'Source Code Pro', monospace;  
+    font-size: 24px;
+    color: rgba(255,255,255,.70);
+    position: relative;
+  }
+  
+  #line4, #line6, #line8, #line9 {
+    margin-top: 40px;
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden; 
+    font-family: 'Source Code Pro', monospace;  
+    font-size: 24px;
+    color: rgba(255,255,255,.70);
+    position: relative;
+  }
+   
+  
+  
+  /* Animation */
+  #line1 {
+    animation: animated-text 2s steps(30,end) 1s 1 normal both
+  }
+  
+  #line2 {
+    animation: animated-text 2s steps(30,end) 2s 1 normal both
+  }
+  
+  #line3 {
+    animation: animated-text 3s steps(30,end) 3s 1 normal both
+  }
+  
+  #line4 {
+    animation: animated-text 2.5s steps(30,end) 6s 1 normal both
+  }
+
+  #line5 {
+    animation: animated-text 2s steps(30,end) 8s 1 normal both
+  }
+  
+  #line6 {
+    animation: animated-text 2s steps(30,end) 10s 1 normal both
+  }
+  #line7 {
+    animation: animated-text 3s steps(30,end) 12s 1 normal both
+  }
+  #line8 {
+    animation: animated-text 3s steps(30,end) 14s 1 normal both
+  }
+  #line9 {
+    animation: animated-text 3s steps(30,end) 17s 1 normal both
+  }
+
+
+  /* text animation */
+  
+  @keyframes animated-text{
+    from{width: 0;}
+    to{width: 1400px;}
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor{
+    from{border-bottom-color: rgba(0,255,0,.75);}
+    to{border-bottom-color: transparent;}
+  }
+  
+  
