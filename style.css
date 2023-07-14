@@ -1,8 +1,68 @@
-body{
-    padding: 30px;
-    background-color: #121212;  
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #121212;
+}
+li {
+  list-style: none;;
+}
+.wrapper {
+	min-height: 100%;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+}
+.wrapper._loaded {
+	opacity: 1;
+}
+.wrapper._loaded .header {
+	transition: transform 0.8s ease 0.8s;
+	transform: translate(0px, 0px);
+}
+.wrapper._loaded .page__pagination {
+	transform: translate(0px, -50%);
+	opacity: 1;
+	visibility: visible;
+	transition: transform 0.6s ease 0.8s;
+}
+.wrapper._free .page__pagination {
+	transition: all 0.3s ease 0s;
+	transform: translate(50px, -50%);
+	opacity: 0;
+}
+/*----------------*/
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	padding: 0px 20px;
+
+	transform: translate(0px, -100%);
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+	display: flex;
+	min-height: 50px;
+	align-items: center;
+}
+.menu__link {
+	color: #fff;
+	font-size: 20px;
+	transition: color 0.3s ease 0s;
+	margin: 0px 20px 0px 0px;
+}
+.menu__link._active {
+	color: #7a956b;
+}
+  #slide1 {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 130px;
+    background-color: #121212; 
   }
-  
   #line1, #line2, #line3, #line5, #line7 {
     height: 40px;
     white-space: nowrap;
@@ -11,6 +71,7 @@ body{
     font-size: 24px;
     color: rgba(255,255,255,.70);
     position: relative;
+    padding-left: 30px;
   }
   
   #line4, #line6, #line8, #line9 {
@@ -22,10 +83,178 @@ body{
     font-size: 24px;
     color: rgba(255,255,255,.70);
     position: relative;
+    padding-left: 30px;
   }
-   
+  h1 {
+    text-align: center;
+    opacity: .7;
+  } 
+  h2 {
+    text-align: center;
+    opacity: 1;
+  }
+  .slide2 {
+    margin-top: 90px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  .title {
+    color: rgba(255,255,255);
+    margin-top: -30px;
+  }
+  .container {
+    margin: 20px auto;
+    display: flex;
+    width: 90vw;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+  img {
+    width: 450px;
+    height: 300px;
+  }
+  .photo-title {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(255,255,255, .70);
+  }
+  .photo-title-2 {
+    font-size: 120px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: -45px;
+    color: rgba(255,255,255,.70);
+  }
+  ._anim-show {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+  }
+  ._anim-show._active,
+  ._active ._anim-show {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  } 
+  .ha {
+    font-size: 150px;
+  }
+  .page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .page__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+    
+  .page__pagination {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translate(50px, -50%);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .page__bullet {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+    border-radius: 50%;
+    transition: background-color 0.3s ease 0s;
+  }
+  .page__bullet_active {
+    background-color: #fff;
+  }
+  .page__scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .page__drag-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
   
-  
+  /*----------------*/
+  .screen {
+    flex: 1 0 100%;
+    position: relative;
+  }
+  .screen__content {
+    padding: 100px 25px 25px 25px;
+    position: relative;
+    z-index: 2;
+  }
+  .screen__title {
+    font-size: 50px;
+    color: #fff;
+    margin: 0px 0px 30px 0px;
+    display: inline-block;
+  }
+  .screen__title_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+  }
+  .screen__body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .screen__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .screen__image img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .screen__text {
+    font-size: 20px;
+    line-height: 130%;
+    color: #fff;
+  }
+  .screen__text p {
+    margin: 0px 0px 20px 0px;
+  }
+  .screen__text p:last-child {
+    margin-bottom: 0;
+  }
+
   /* Animation */
   #line1 {
     animation: animated-text 2s steps(30,end) 1s 1 normal both
@@ -40,24 +269,24 @@ body{
   }
   
   #line4 {
-    animation: animated-text 2.5s steps(30,end) 6s 1 normal both
+    animation: animated-text 3s steps(30,end) 7s 1 normal both
   }
 
   #line5 {
-    animation: animated-text 2s steps(30,end) 8s 1 normal both
+    animation: animated-text 3s steps(30,end) 9s 1 normal both
   }
   
   #line6 {
-    animation: animated-text 2s steps(30,end) 10s 1 normal both
+    animation: animated-text 3s steps(30,end) 13s 1 normal both
   }
   #line7 {
-    animation: animated-text 3s steps(30,end) 12s 1 normal both
+    animation: animated-text 3s steps(30,end) 16s 1 normal both
   }
   #line8 {
-    animation: animated-text 3s steps(30,end) 14s 1 normal both
+    animation: animated-text 3s steps(30,end) 18s 1 normal both
   }
   #line9 {
-    animation: animated-text 3s steps(30,end) 17s 1 normal both
+    animation: animated-text 3s steps(30,end) 22s 1 normal both
   }
 
 
@@ -75,4 +304,15 @@ body{
     to{border-bottom-color: transparent;}
   }
   
-  
+  /*animations on pages 2 & 3*/
+
+  ._animation {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+  }
+  ._animation ._active
+  ._active ._animation  {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
