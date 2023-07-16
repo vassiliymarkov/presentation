@@ -294,7 +294,7 @@ li {
   
   @keyframes animated-text{
     from{width: 0;}
-    to{width: 1400px;}
+    to{width: 1600px;}
   }
   
   /* cursor animations */
